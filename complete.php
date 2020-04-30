@@ -2,6 +2,8 @@
 	session_start();
 	include 'lib/con.php';
 
+	echo "Provocando un conflicto";
+
 	//preparing statement
 	$stmt=$conn->prepare("UPDATE tasks SET completed=1 WHERE user=? AND id=?");
 	$stmt->bind_param("ii",$_SESSION['id'],$_GET['task']);
